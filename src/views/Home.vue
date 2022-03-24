@@ -1,8 +1,13 @@
 <template>
-  <div class="max-w-sm mx-auto mt-20">
-    <h1 class="text-xl font-bold uppercase text-gray-600">Home</h1>
+  <div class="max-w-xl mx-auto mt-20">
+    <h1 class="text-xl font-bold uppercase text-gray-600 text-center">Home</h1>
     <div class="post-list">
-      <PostList :posts="posts" />
+      <PostList v-if="showPosts" :posts="posts" />
+      <div class="flex gap-2 justify-center">
+        <button class="bg-cyan-400 text-gray-600 mt-10 font-semibold px-3 py-2 rounded-md" @click="showPosts = !showPosts">toggle posts</button>
+        <button class="bg-pink-400 text-gray-600 mt-10 font-semibold px-3 py-2 rounded-md" @click="posts.pop()">delete a post</button>
+
+      </div>
     </div>
   </div>
 </template>
@@ -22,7 +27,9 @@ export default {
         id: 1},
       { title: 'top 5 CSS tips', body: 'lorem ipusm', id: 2},
     ])
-    return { posts }
+    const showPosts = ref(true)
+
+    return { posts, showPosts }
   }
 }
 </script>
