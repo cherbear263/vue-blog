@@ -1,29 +1,28 @@
 <template>
   <div class="max-w-sm mx-auto mt-20">
     <h1 class="text-xl font-bold uppercase text-gray-600">Home</h1>
-    <div v-for="name in matchingNames" :key="name">
-      {{ name }}
+    <div class="post-list">
+      <PostList :posts="posts" />
     </div>
-    <input type="text" v-model="search" class="border-2 border-cyan-500 my-3 rounded-sm pl-2" placeholder="search"/>
-    <p>search term - {{ search }} </p>
-    
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import {computed, ref} from 'vue'
+import {ref} from 'vue'
+import PostList from '../components/PostList.vue'
 
 export default {
   name: 'Home',
+  components: { PostList },
   setup() {
-    const search = ref('')
-    const names = ref(['mario', 'yoshi', 'luigi', 'toad', 'bowser', 'koopa', 'peach'])
-
-    const matchingNames = computed(() => {
-      return names.value.filter((name) => name.includes(search.value))
-  })
-    return { names, search, matchingNames }
+    const posts = ref([
+      { title: 'welcome to the blog', 
+        body: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?',
+        id: 1},
+      { title: 'top 5 CSS tips', body: 'lorem ipusm', id: 2},
+    ])
+    return { posts }
   }
 }
 </script>
