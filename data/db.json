@@ -50,6 +50,45 @@
         "json"
       ],
       "id": 5
+    },
+    {
+      "title": "The new TITLE",
+      "body": "This should redirect to home",
+      "tags": [
+        "router",
+        "html",
+        "vue",
+        "routter"
+      ],
+      "id": 6
+    },
+    {
+      "title": "new title",
+      "body": "another new content ",
+      "tags": [
+        "css",
+        "html"
+      ],
+      "id": 7
+    },
+    {
+      "title": "new title",
+      "body": "another new content ",
+      "tags": [
+        "css",
+        "html"
+      ],
+      "id": 8
+    },
+    {
+      "title": "try this again",
+      "body": "oh my gosh i'm really tired of not getting redirected!",
+      "tags": [
+        "dud",
+        "non-functional",
+        "router-sucks"
+      ],
+      "id": 9
     }
   ]
 }
