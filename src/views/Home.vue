@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-xl mx-auto mt-20">
+  <div class="max-w-xl mx-auto mt-10  p-3">
     <h1 class="text-xl font-bold uppercase text-gray-600 text-center">Home</h1>
     <div class="post-list">
       <div v-if="error" class="text-pink-500 text-center mt-5">{{error}}</div>

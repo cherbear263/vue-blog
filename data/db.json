@@ -39,7 +39,17 @@
         "javascript",
         "jquery"
       ]
+    },
+    {
+      "title": "This is the new title",
+      "body": "This is the most amazing content for a blog post ever!! ",
+      "tags": [
+        "html",
+        "blog",
+        "css",
+        "json"
+      ],
+      "id": 5
     }
-
   ]
 }
